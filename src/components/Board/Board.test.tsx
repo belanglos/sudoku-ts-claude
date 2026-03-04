@@ -43,4 +43,18 @@ describe('Board', () => {
     // Same box: (1,1), (2,2) etc.
     expect(cells[1 * 9 + 1]).toHaveAttribute('data-peer', 'true')
   })
+
+  it('applies boardWon class when won is true', () => {
+    const { container } = render(
+      <Board board={emptyBoard} selectedCell={null} onSelect={vi.fn()} won={true} />
+    )
+    expect((container.firstChild as HTMLElement).className).toMatch(/boardWon/)
+  })
+
+  it('does not apply boardWon class when won is false', () => {
+    const { container } = render(
+      <Board board={emptyBoard} selectedCell={null} onSelect={vi.fn()} won={false} />
+    )
+    expect((container.firstChild as HTMLElement).className).not.toMatch(/boardWon/)
+  })
 })
