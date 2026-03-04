@@ -4,12 +4,119 @@
   box-sizing: border-box;
 }
 
+/* ── Light theme (default) ── */
+:root,
+[data-theme="light"] {
+  --bg-app: #fafafa;
+  --color-text: #222;
+  --color-text-subtle: #666;
+
+  --bg-cell: #fff;
+  --border-cell: #bbb;
+  --border-board: #333;
+
+  --color-digit-user: #1a73e8;
+  --color-digit-given: #222;
+
+  --bg-cell-conflict: #fde8e8;
+  --color-digit-conflict: #c0392b;
+  --bg-cell-selected: #bbdefb;
+  --color-outline-selected: #1a73e8;
+  --bg-cell-same-digit: #e3f2fd;
+  --bg-cell-peer: #f0f0f0;
+  --bg-cell-hover: #e8f4fd;
+
+  --bg-win: #e6f4ea;
+  --border-win: #34a853;
+  --color-win: #1e8e3e;
+  --color-win-secondary: #2e7d4f;
+  --bg-win-btn: #34a853;
+  --bg-win-btn-hover: #2d9248;
+
+  --bg-btn: #f8f8f8;
+  --border-btn: #ccc;
+  --color-btn-action: #555;
+  --color-primary: #1a73e8;
+  --color-primary-hover: #1557b0;
+}
+
+/* ── Dark theme ── */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-app: #121212;
+    --color-text: #e0e0e0;
+    --color-text-subtle: #999;
+
+    --bg-cell: #1e1e1e;
+    --border-cell: #444;
+    --border-board: #555;
+
+    --color-digit-user: #64b5f6;
+    --color-digit-given: #e0e0e0;
+
+    --bg-cell-conflict: #3d1515;
+    --color-digit-conflict: #ef9a9a;
+    --bg-cell-selected: #1a3a5c;
+    --color-outline-selected: #64b5f6;
+    --bg-cell-same-digit: #0d2840;
+    --bg-cell-peer: #2a2a2a;
+    --bg-cell-hover: #1a3050;
+
+    --bg-win: #1a3320;
+    --border-win: #4caf50;
+    --color-win: #66bb6a;
+    --color-win-secondary: #81c784;
+    --bg-win-btn: #388e3c;
+    --bg-win-btn-hover: #2e7d32;
+
+    --bg-btn: #2a2a2a;
+    --border-btn: #555;
+    --color-btn-action: #aaa;
+    --color-primary: #64b5f6;
+    --color-primary-hover: #90caf9;
+  }
+}
+
+[data-theme="dark"] {
+  --bg-app: #121212;
+  --color-text: #e0e0e0;
+  --color-text-subtle: #999;
+
+  --bg-cell: #1e1e1e;
+  --border-cell: #444;
+  --border-board: #555;
+
+  --color-digit-user: #64b5f6;
+  --color-digit-given: #e0e0e0;
+
+  --bg-cell-conflict: #3d1515;
+  --color-digit-conflict: #ef9a9a;
+  --bg-cell-selected: #1a3a5c;
+  --color-outline-selected: #64b5f6;
+  --bg-cell-same-digit: #0d2840;
+  --bg-cell-peer: #2a2a2a;
+  --bg-cell-hover: #1a3050;
+
+  --bg-win: #1a3320;
+  --border-win: #4caf50;
+  --color-win: #66bb6a;
+  --color-win-secondary: #81c784;
+  --bg-win-btn: #388e3c;
+  --bg-win-btn-hover: #2e7d32;
+
+  --bg-btn: #2a2a2a;
+  --border-btn: #555;
+  --color-btn-action: #aaa;
+  --color-primary: #64b5f6;
+  --color-primary-hover: #90caf9;
+}
+
 :root {
   font-family: system-ui, -apple-system, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-  color: #213547;
-  background-color: #fafafa;
+  color: var(--color-text);
+  background-color: var(--bg-app);
   -webkit-font-smoothing: antialiased;
 }
 

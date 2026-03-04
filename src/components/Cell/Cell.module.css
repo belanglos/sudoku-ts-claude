@@ -1,8 +1,8 @@
 .cell {
   width: 100%;
   aspect-ratio: 1;
-  border: 1px solid #bbb;
-  background: #fff;
+  border: 1px solid var(--border-cell);
+  background: var(--bg-cell);
   font-size: clamp(14px, 2.5vw, 24px);
   font-weight: 500;
   cursor: pointer;
@@ -10,35 +10,35 @@
   align-items: center;
   justify-content: center;
   padding: 0;
-  color: #1a73e8;
+  color: var(--color-digit-user);
   transition: background 0.1s;
 }
 
 .cell[data-given] {
-  color: #222;
+  color: var(--color-digit-given);
   font-weight: 700;
 }
 
 .cell[data-conflict] {
-  background: #fde8e8;
-  color: #c0392b;
+  background: var(--bg-cell-conflict);
+  color: var(--color-digit-conflict);
 }
 
 .cell[data-selected] {
-  background: #bbdefb;
-  outline: 2px solid #1a73e8;
+  background: var(--bg-cell-selected);
+  outline: 2px solid var(--color-outline-selected);
   outline-offset: -2px;
   z-index: 1;
 }
 
 .cell[data-same-digit]:not([data-selected]) {
-  background: #e3f2fd;
+  background: var(--bg-cell-same-digit);
 }
 
 .cell[data-peer]:not([data-selected]):not([data-same-digit]) {
-  background: #f0f0f0;
+  background: var(--bg-cell-peer);
 }
 
 .cell:hover:not([data-selected]) {
-  background: #e8f4fd;
+  background: var(--bg-cell-hover);
 }

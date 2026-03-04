@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: repeat(9, 1fr);
   width: min(90vw, 500px);
-  border: 3px solid #333;
+  border: 3px solid var(--border-board);
   gap: 0;
 }
 
@@ -11,16 +11,16 @@
 .board > *:nth-child(9n + 4),
 .board > *:nth-child(9n + 7) {
   border-left-width: 2px;
-  border-left-color: #333;
+  border-left-color: var(--border-board);
 }
 
 .board > *:nth-child(n + 19):nth-child(-n + 27),
 .board > *:nth-child(n + 46):nth-child(-n + 54) {
   border-bottom-width: 2px;
-  border-bottom-color: #333;
+  border-bottom-color: var(--border-board);
 }
 
 .board > *:nth-child(-n + 9) {
   border-top-width: 2px;
-  border-top-color: #333;
+  border-top-color: var(--border-board);
 }
