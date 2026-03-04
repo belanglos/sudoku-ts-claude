@@ -17,9 +17,12 @@ const emptyBoard: GameState['board'] = Array.from({ length: 9 }, () =>
   Array.from({ length: 9 }, () => ({ value: 0 as const, given: false, conflict: false }))
 )
 
+const emptySolution = Array.from({ length: 9 }, () => Array(9).fill(0)) as GameState['solution']
+
 function makeState(overrides: Partial<GameState>): GameState {
   return {
     board: emptyBoard,
+    solution: emptySolution,
     selectedCell: null,
     history: [],
     difficulty: 'easy',
