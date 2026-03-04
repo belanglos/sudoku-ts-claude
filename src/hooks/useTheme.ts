@@ -3,6 +3,7 @@ import { useState } from 'react'
 type Theme = 'light' | 'dark'
 
 function getInitialTheme(): Theme {
+  if (typeof window === 'undefined') return 'light'
   const saved = localStorage.getItem('theme')
   if (saved === 'light' || saved === 'dark') return saved
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
@@ -10,7 +11,9 @@ function getInitialTheme(): Theme {
 
 // Set the attribute synchronously so the first render already has the right theme
 const initial = getInitialTheme()
-document.documentElement.dataset.theme = initial
+if (typeof document !== 'undefined') {
+  document.documentElement.dataset.theme = initial
+}
 
 export function useTheme() {
   const [theme, setTheme] = useState<Theme>(initial)
