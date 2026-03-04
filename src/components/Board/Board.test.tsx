@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Board } from './Board'
+import styles from './Board.module.css'
 import type { BoardState } from '../../types'
 
 function makeBoard(values: number[][]): BoardState {
@@ -42,5 +43,19 @@ describe('Board', () => {
     expect(cells[1 * 9 + 0]).toHaveAttribute('data-peer', 'true')
     // Same box: (1,1), (2,2) etc.
     expect(cells[1 * 9 + 1]).toHaveAttribute('data-peer', 'true')
+  })
+
+  it('applies boardWon class when won is true', () => {
+    const { container } = render(
+      <Board board={emptyBoard} selectedCell={null} onSelect={vi.fn()} won={true} />
+    )
+    expect((container.firstChild as HTMLElement).className).toContain(styles.boardWon)
+  })
+
+  it('does not apply boardWon class by default', () => {
+    const { container } = render(
+      <Board board={emptyBoard} selectedCell={null} onSelect={vi.fn()} />
+    )
+    expect((container.firstChild as HTMLElement).className).not.toContain(styles.boardWon)
   })
 })

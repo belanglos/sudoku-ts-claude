@@ -17,7 +17,7 @@ A clean, browser-based Sudoku game built with React and TypeScript.
 - [React 19](https://react.dev) + [TypeScript](https://www.typescriptlang.org)
 - [Vite](https://vite.dev) for development and bundling
 - [Vitest](https://vitest.dev) + [Testing Library](https://testing-library.com) for unit tests
-- No runtime dependencies beyond React itself
+- No runtime dependencies beyond React and React DOM
 
 ## Getting started
 

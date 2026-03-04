@@ -34,6 +34,7 @@ export default function App() {
             board={state.board}
             selectedCell={state.selectedCell}
             onSelect={selectCell}
+            won={state.status === 'won'}
           />
           <NumberPad onDigit={inputDigit} onErase={erase} onUndo={undo} />
         </>
@@ -43,7 +44,7 @@ export default function App() {
         <div className={styles.winBanner}>
           <span className={styles.winTitle}>Puzzle solved!</span>
           <span className={styles.winDifficulty}>{state.difficulty}</span>
-          <button className={styles.winNewGame} onClick={() => newGame(state.difficulty)}>
+          <button type="button" className={styles.winNewGame} onClick={() => newGame(state.difficulty)}>
             Play again
           </button>
         </div>

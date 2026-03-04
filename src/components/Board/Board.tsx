@@ -6,6 +6,7 @@ interface BoardProps {
   board: BoardState
   selectedCell: [number, number] | null
   onSelect: (row: number, col: number) => void
+  won?: boolean
 }
 
 function isPeer(r: number, c: number, sr: number, sc: number): boolean {
@@ -17,12 +18,12 @@ function isPeer(r: number, c: number, sr: number, sc: number): boolean {
   )
 }
 
-export function Board({ board, selectedCell, onSelect }: BoardProps) {
+export function Board({ board, selectedCell, onSelect, won = false }: BoardProps) {
   const [sr, sc] = selectedCell ?? [-1, -1]
   const selectedValue = selectedCell ? board[sr][sc].value : 0
 
   return (
-    <div className={styles.board} role="grid">
+    <div className={`${styles.board}${won ? ` ${styles.boardWon}` : ''}`} role="grid">
       {board.map((row, r) =>
         row.map((cellState, c) => (
           <Cell
