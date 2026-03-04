@@ -1,0 +1,39 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 16px;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: #fafafa;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 20px;
+  color: #222;
+  letter-spacing: -0.5px;
+}
+
+.prompt {
+  color: #666;
+  margin-top: 24px;
+}
+
+.winBanner {
+  margin-top: 20px;
+  padding: 16px 32px;
+  background: #e6f4ea;
+  border: 2px solid #34a853;
+  border-radius: 8px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1e8e3e;
+  animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

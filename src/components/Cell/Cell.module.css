@@ -1,0 +1,44 @@
+.cell {
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid #bbb;
+  background: #fff;
+  font-size: clamp(14px, 2.5vw, 24px);
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: #1a73e8;
+  transition: background 0.1s;
+}
+
+.cell[data-given] {
+  color: #222;
+  font-weight: 700;
+}
+
+.cell[data-conflict] {
+  background: #fde8e8;
+  color: #c0392b;
+}
+
+.cell[data-selected] {
+  background: #bbdefb;
+  outline: 2px solid #1a73e8;
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+.cell[data-same-digit]:not([data-selected]) {
+  background: #e3f2fd;
+}
+
+.cell[data-peer]:not([data-selected]):not([data-same-digit]) {
+  background: #f0f0f0;
+}
+
+.cell:hover:not([data-selected]) {
+  background: #e8f4fd;
+}

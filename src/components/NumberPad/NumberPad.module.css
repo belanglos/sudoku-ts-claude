@@ -1,0 +1,31 @@
+.pad {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  width: min(90vw, 500px);
+  margin-top: 12px;
+}
+
+.digit,
+.action {
+  padding: 12px 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+  background: #f8f8f8;
+  cursor: pointer;
+  transition: background 0.1s, border-color 0.1s;
+}
+
+.digit:hover,
+.action:hover {
+  background: #e3f2fd;
+  border-color: #1a73e8;
+}
+
+.action {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #555;
+}
