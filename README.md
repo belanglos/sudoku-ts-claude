@@ -10,6 +10,7 @@ A clean, browser-based Sudoku game built with React and TypeScript.
 - **Undo** — step back through your moves
 - **Keyboard support** — arrow keys to navigate, number keys to fill, Backspace/Delete to erase, Ctrl+Z to undo
 - **Auto-save** — game state is saved to localStorage and restored on reload
+- **Dark mode** — follows OS preference automatically; manual toggle in the header persists to localStorage
 
 ## Tech stack
 
