@@ -2,6 +2,7 @@ import { describe, it, expect, vi } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { Board } from './Board'
+import styles from './Board.module.css'
 import type { BoardState } from '../../types'
 
 function makeBoard(values: number[][]): BoardState {
@@ -48,13 +49,13 @@ describe('Board', () => {
     const { container } = render(
       <Board board={emptyBoard} selectedCell={null} onSelect={vi.fn()} won={true} />
     )
-    expect((container.firstChild as HTMLElement).className).toMatch(/boardWon/)
+    expect((container.firstChild as HTMLElement).className).toContain(styles.boardWon)
   })
 
-  it('does not apply boardWon class when won is false', () => {
+  it('does not apply boardWon class by default', () => {
     const { container } = render(
-      <Board board={emptyBoard} selectedCell={null} onSelect={vi.fn()} won={false} />
+      <Board board={emptyBoard} selectedCell={null} onSelect={vi.fn()} />
     )
-    expect((container.firstChild as HTMLElement).className).not.toMatch(/boardWon/)
+    expect((container.firstChild as HTMLElement).className).not.toContain(styles.boardWon)
   })
 })
